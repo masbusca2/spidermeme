@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('background.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Transparencia del fondo */
+    z-index: -1;
+}
+
+header {
+    background-color: rgba(255, 49, 49, 0.9);
+    padding: 20px 10px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 60px;
+    margin-right: 15px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.tagline {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+section {
+    padding: 40px 20px;
+    border-bottom: 1px solid #444;
+    position: relative;
+    z-index: 1;
+}
+
+h2 {
+    color: #ffcc00;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%; /* Ancho completo para que el carrusel ocupe toda la pantalla */
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    width: max-content; /* Permite que las imágenes se ajusten a su tamaño real */
+    animation: slide 10s linear infinite; /* Animación continua de deslizamiento */
+}
+
+.carousel img {
+    width: 100vw; /* Cada imagen ocupará el 100% del ancho de la ventana */
+    object-fit: cover; /* Asegura que las imágenes se ajusten correctamente */
+    margin-right: 20px; /* Separación entre las imágenes (ajusta este valor) */
+    border: 5px solid #fff; /* Marco blanco alrededor de las imágenes */
+    border-radius: 15px; /* Esquinas redondeadas para el borde */
+}
+
+/* Animación para el deslizamiento continuo de derecha a izquierda */
+@keyframes slide {
+    0% {
+        transform: translateX(100%); /* Comienza fuera de la pantalla por la derecha */
+    }
+    100% {
+        transform: translateX(-100%); /* Termina fuera de la pantalla por la izquierda */
+    }
+}
+
+
+
+
+button {
+    background-color: #ffcc00;
+    color: #1a1a2e;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff3131;
+    color: white;
+}
+
+footer {
+    background-color: rgba(34, 34, 34, 0.9);
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+/* Estilos para la sección intro con texto desplazante */
+.intro {
+    height: 400px;  /* Altura de la sección */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    margin: 20px 0;
+}
+
+.scrolling-text {
+    position: absolute;
+    width: 80%;  /* Ancho del contenido */
+    text-align: center;
+    font-size: 1.1em;  /* Tamaño de la letra medio */
+    font-weight: bold;  /* Negrita */
+    line-height: 1.8;
+    color: #fff;  /* Color blanco */
+    animation: scroll-up 40s linear infinite; /* Velocidad del desplazamiento */
+}
+
+@keyframes scroll-up {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* Asegura que la sección tenga un espacio visual agradable */
+.intro h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffcc00;  /* Color llamativo */
+}
